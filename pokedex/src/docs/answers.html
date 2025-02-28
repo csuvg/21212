@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suficiencia Web '25</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Suficiencia 2025 Sistemas y tecnologías web</h1>
+    </header>
+    <article>
+        <h2>Parte 1</h2>
+        <h3>Diseño</h3>
+        <p>
+            A continuación, se cumple con lo establecido para la parte 1 del examen de suficiencia de sistemas y tecnologías web.
+        </p>
+        <h4>Explicación de los componentes</h4>
+        <details>
+            <summary>Componentes principales en React</summary>
+            <p>
+                Para esta ocación, se utilizarán los siguientes componentes principales en React:
+                <ul>
+                    <li>Pokemon: componente para la carga de pokemones desde el API, como también de su despliegue en la página</li>
+                    <li>PokeDetails: detalles de los Pokemon como su HP, fuerza, habilidad, etc.</li>
+                    <li>Searcher: barra de búsqueda</li>
+                </ul>
+            </p>
+        </details>
+        <details>
+            <summary>Estructura del código y organización de carpetas</summary>
+            <p>
+                La estructura del código se organizará de la siguiente manera:
+                <ul>
+                    <li>src
+                        <ul>
+                            <li>components
+                                <ul>
+                                    <ul>
+                                        <li>Pokemon.jsx</li>
+                                        <li>Pokemon.css</li>
+                                    </ul>
+                                    <ul>
+                                        <li>PokeDetails.jsx</li>
+                                        <li>PokeDetails.css</li>
+                                    </ul>
+                                    <ul>
+                                        <li>Searcher.jsx</li>
+                                        <li>Searcher.css</li>
+                                    </ul>                                    
+                                </ul>
+                            </li>
+                            <li>hooks</li>
+                                <ul>
+                                    <li>pokeHook.js/li>
+                                </ul>
+                            <li>App.jsx</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+        </details>
+        <h4>Explicación del consumo de datos mediante la API</h4>
+        <details>
+            <summary>¿Cómo se harán las llamadas al PokeAPI?</summary>
+            <p>
+                Las llamadas se hará mediante el uso de fetch y funciones asíncronas,
+                las cuales obtendrán por medio de GET la respuesta del API en formato JSON.
+            </p>
+        </details>
+        <details>
+            <summary>¿Cómo se manejarán los datos, una vez recibidos?</summary>
+            <p>
+                Los datos se manejarán por medio de estados y hooks. Los primeros se actualizarán
+                cada vez que se haga una llamada al API.
+            </p>
+        </details>
+        <h4>Análisis del problema y solución propuesta</h4>
+        <details>
+            <summary>Desafíos a enfrentar</summary>
+            <p>
+                Los principales desafíos serían:
+                <ul>
+                    <li>Manejo de estados</li>
+                    <li>Carga desde el API</li>
+                    <li>Creación de tarjetas</li>
+                    <li>Manejo de detalles para cada Pokemon</li>
+                </ul>
+            </p>
+        </details>
+        <details>
+            <summary>Estructura de la interfaz</summary>
+            <p>
+                La solución final tendrá de inicio una barra de búsqueda con un botón donde se puedan
+                buscar los pokemones por su nombre o ID. Abajo estarán las tarjetas y al hacer click en alguna,
+                se desplegará el detalle del Pokemon dentro de un modal.
+            </p>
+        </details>
+        <details>
+            <summary>Navegación e interacción de los datos</summary>
+            <p>
+                La navegación se hará por medio de la barra de búsqueda y la interacción
+                será por medio de las tarjetas y el modal con los detalles desplegados según cada Pokemon.
+            </p>
+        </details>
+    </article>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Universidad del Valle de Guatemala. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
