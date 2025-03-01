@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {styles} from './Pokemon.module.css'
 import usePokeHook from '@hooks/usePokeHook'
+import Searcher from '@components/Searcher/Searcher'
 import PokeDetails from '@components/PokeDetails/PokeDetails'
 
 const PokeCard = ({pokeId, pokeImg, pokeName, handleShowDetails}) => {
@@ -15,14 +16,23 @@ const PokeCard = ({pokeId, pokeImg, pokeName, handleShowDetails}) => {
 
 const Pokemon = () => {
 
-    const {pokemons, loadEvenMore} = usePokeHook()
+    const {pokemons, loadEvenMore, searching} = usePokeHook()
     const [showDetails, setShowDetails] = useState({showDetails: false, pokemon: {}})
+    const [search, setSearch] = useState('')
     const handleShowDetails = (pokemon) => setShowDetails({showDetails: true, pokemon})
     const handleCloseDetails = () => setShowDetails({showDetails: false, pokemon: {}})
-    
+    const searchPokemon = async (e) => {
+        e.preventDefault()
+        if(!search) return
+        const pokemon = await searching(search)
+
+        setShowDetails({showDetails: true, pokemon})
+    }
+
     return(
         <>
             <PokeDetails {...showDetails} toClose = {handleCloseDetails}/>
+            <Searcher search={search} setSearch={setSearch} searchPokemon={searchPokemon}/>
             <section className={styles}>
                 {
                     pokemons.map((pokemon) => (

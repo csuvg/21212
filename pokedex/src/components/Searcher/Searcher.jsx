@@ -1,14 +1,19 @@
 import React from 'react'
 import styles  from './Searcher.module.css'
 
-const Searcher = () => {
+const Searcher = ({search, setSearch, searchPokemon}) => {
     return(
-        <section className = {styles}>
-            <input className = 'search-input' type="text" placeholder='Busca tu Pokémon por su número o nombre' />
+        <form className = {styles} onSubmit={searchPokemon}>
+            <input className = 'search-input' 
+                type="text" 
+                placeholder='Busca tu Pokémon por su número o nombre' 
+                value={search} 
+                onChange={(e) => setSearch(e.target.value)}
+            />
             <button className='search-button'>
                 Buscar
             </button>
-        </section>
+        </form>
     )
 }
 export default Searcher
