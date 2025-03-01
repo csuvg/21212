@@ -1,6 +1,6 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import {styles} from './Pokemon.module.css'
+import usePokeHook from '@hooks/usePokeHook'
 
 const PokeCard = ({pokeId, pokeImg, pokeName}) => {
     return(
@@ -13,29 +13,8 @@ const PokeCard = ({pokeId, pokeImg, pokeName}) => {
 }
 
 const Pokemon = () => {
-    const [pokemons, setPokemons] = useState([])
 
-    useEffect(() => {
-        const getPokemons = async () => {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=100&offset=0')
-            const data = await response.json()
-            const {results} = data
-
-            const pokeList = results.map(async pokemon => {
-                const response = await fetch(pokemon.url)
-                const specie = await response.json()
-
-                return {
-                    id: specie.id,
-                    name: specie.name,
-                    img: specie.sprites.other.dream_world.front_default
-                }
-            }, [])
-
-            setPokemons(await Promise.all(pokeList))
-        }
-        getPokemons()
-    })
+    const {pokemons, loadEvenMore} = usePokeHook()
 
     return(
         <section className={styles}>
@@ -49,6 +28,7 @@ const Pokemon = () => {
                     />
                 ))
             }
+            <button className='poke-button' onClick={loadEvenMore}>Mostrar más</button>
         </section>
     )
 }
