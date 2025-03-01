@@ -15,11 +15,21 @@ const usePokeHook = () => {
             results.map(async pokemon => {
                 const response = await fetch(pokemon.url)
                 const specie = await response.json()
+                
+                const types = specie.types.map(type => type.type.name)
+                const stats = specie.stats.map(stat => {
+                    return {
+                        name: stat.stat.name,
+                        value: stat.base_stat
+                    }
+                })
 
                 return {
                     id: specie.id,
                     name: specie.name,
-                    img: specie.sprites.other.dream_world.front_default
+                    img: specie.sprites.other.dream_world.front_default,
+                    types,
+                    stats
                 }
             }, [])
         )   
