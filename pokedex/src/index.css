@@ -54,6 +54,49 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input {
+  background-color: black;
+  width: 400px;
+  height: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: white;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 12px;
+}
+
+section {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0;
+  border-radius: 20px;
+  border: 5px solid gray;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+article:hover{
+  transform: scale(1.1);
+}
+
+img{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+h2, h3, p{
+  text-transform: capitalize;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
